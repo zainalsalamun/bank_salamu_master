@@ -14,10 +14,10 @@ A new Flutter project bank apps
 
 
 ### Screenshots     
-<img src="assets/screenshots/onboarding1.png" width="32%" /> <img src="assets/screenshots/onboarding2.png" width="32%" /> <img src="assets/screenshots/onboarding3.png" width="32%" />
+<img src="assets/screenshots/onboarding1.png" width="22%" /> <img src="assets/screenshots/onboarding2.png" width="22%" /> <img src="assets/screenshots/onboarding3.png" width="22%" />
 
 ### Screen Recording
-<img src="assets/screenshots/signinpage.png" width="32%" />
+<img src="assets/screenshots/signinpage.png" width="22%" />
 ## :rocket: Technologies
 
 The following tools were used in this project:
