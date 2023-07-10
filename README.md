@@ -1,10 +1,3 @@
-# bank_salamu_master
-
-A new Flutter project bank apps 
-
-
-## Getting Started
-
 <h1 align="center">Salamu Bank Apps</h1>
 
 <h3 align="center">
@@ -16,7 +9,7 @@ A new Flutter project bank apps
 ### Screenshots     
 <img src="assets/screenshots/onboarding1.png" width="22%" /> <img src="assets/screenshots/onboarding2.png" width="22%" /> <img src="assets/screenshots/onboarding3.png" width="22%" />
 
-### Screen Recording
+### Screenshots
 <img src="assets/screenshots/signinpage.png" width="22%" />
 ## :rocket: Technologies
 
