@@ -2,6 +2,9 @@ import 'package:bank_salamu_master/shared/theme.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
+import '../../widget/button.dart';
+import '../signin/signin_page.dart';
+
 class OnboardingPage extends StatefulWidget {
   const OnboardingPage({super.key});
 
@@ -95,31 +98,22 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   SizedBox(height: currentIndex == 2 ? 50 : 0),
                   currentIndex == 2
                       ? Column(children: [
-                          SizedBox(
-                            width: double.infinity,
-                            height: 50,
-                            child: TextButton(
-                              onPressed: () {
-                                carouselController.nextPage();
-                              },
-                              style: TextButton.styleFrom(
-                                  backgroundColor: purpleColor,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(56),
-                                  )),
-                              child: Text(
-                                'Get Started',
-                                style: whiteTextStyle.copyWith(
-                                    fontSize: 16, fontWeight: semiBold),
-                              ),
-                            ),
+                          CustomFilledButton(
+                            title: 'Get Started',
+                            onPressed: () {},
                           ),
                           const SizedBox(height: 20),
                           SizedBox(
                             width: double.infinity,
                             height: 24,
                             child: TextButton(
-                              onPressed: () {},
+                              onPressed: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const SignInPage(),
+                                    ));
+                              },
                               style: TextButton.styleFrom(
                                 padding: EdgeInsets.zero,
                               ),
@@ -170,25 +164,12 @@ class _OnboardingPageState extends State<OnboardingPage> {
                                       : lightBackgroundColor),
                             ),
                             const Spacer(),
-                            SizedBox(
-                              width: 150,
-                              height: 50,
-                              child: TextButton(
+                            CustomFilledButton(
+                                width: 150,
+                                title: 'Continue',
                                 onPressed: () {
                                   carouselController.nextPage();
-                                },
-                                style: TextButton.styleFrom(
-                                    backgroundColor: purpleColor,
-                                    shape: RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(56),
-                                    )),
-                                child: Text(
-                                  'Continue',
-                                  style: whiteTextStyle.copyWith(
-                                      fontSize: 16, fontWeight: semiBold),
-                                ),
-                              ),
-                            )
+                                }),
                           ],
                         )
                 ],
