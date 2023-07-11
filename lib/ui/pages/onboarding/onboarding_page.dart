@@ -97,34 +97,31 @@ class _OnboardingPageState extends State<OnboardingPage> {
                   const SizedBox(height: 24),
                   SizedBox(height: currentIndex == 2 ? 50 : 0),
                   currentIndex == 2
-                      ? Column(children: [
-                          CustomFilledButton(
-                            title: 'Get Started',
-                            onPressed: () {},
-                          ),
-                          const SizedBox(height: 20),
-                          SizedBox(
-                            width: double.infinity,
-                            height: 24,
-                            child: TextButton(
+                      ? Column(
+                          children: [
+                            CustomFilledButton(
+                              title: 'Get Started',
                               onPressed: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => const SignInPage(),
-                                    ));
+                                Navigator.pushNamedAndRemoveUntil(
+                                  context,
+                                  '/signin',
+                                  (route) => false,
+                                );
                               },
-                              style: TextButton.styleFrom(
-                                padding: EdgeInsets.zero,
-                              ),
-                              child: Text(
-                                'Sign in',
-                                style: greyTextStyle.copyWith(
-                                    fontSize: 16, fontWeight: semiBold),
-                              ),
                             ),
-                          )
-                        ])
+                            const SizedBox(height: 20),
+                            CustomTextButton(
+                              title: 'Sign In',
+                              onPressed: () {
+                                Navigator.pushNamedAndRemoveUntil(
+                                  context,
+                                  '/signin',
+                                  (route) => false,
+                                );
+                              },
+                            ),
+                          ],
+                        )
                       : Row(
                           children: [
                             Container(
