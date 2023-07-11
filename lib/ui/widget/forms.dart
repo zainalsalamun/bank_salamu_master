@@ -1,7 +1,5 @@
 import 'package:bank_salamu_master/shared/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 
 class CustomFormField extends StatelessWidget {
   final String title;
@@ -9,10 +7,12 @@ class CustomFormField extends StatelessWidget {
   final TextEditingController? controller;
   final bool isShowTitle;
   final Function(String)? onFileSubmited;
+  final String hintText;
 
   const CustomFormField(
       {super.key,
       required this.title,
+      required this.hintText,
       required this.obsecureText,
       this.controller,
       required this.isShowTitle,
@@ -36,6 +36,7 @@ class CustomFormField extends StatelessWidget {
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(14),
           ),
+          hintText: hintText,
           contentPadding: const EdgeInsets.all(12),
         ),
         onFieldSubmitted: onFileSubmited,
