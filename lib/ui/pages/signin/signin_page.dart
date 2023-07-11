@@ -1,3 +1,4 @@
+import 'package:bank_salamu_master/ui/widget/forms.dart';
 import 'package:flutter/material.dart';
 import '../../../shared/theme.dart';
 import '../../widget/button.dart';
@@ -45,59 +46,36 @@ class SignInPage extends StatelessWidget {
             ),
             child: Column(
               children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Email Address',
-                      style: blackTextStyle.copyWith(
-                        fontWeight: medium,
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-                    TextFormField(
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(14)),
-                        contentPadding: const EdgeInsets.all(15),
-                        hintText: 'Enter your email',
-                      ),
-                    ),
-                  ],
+                const CustomFormField(
+                    title: 'Email Address',
+                    hintText: 'Enter your email address',
+                    obsecureText: false,
+                    isShowTitle: true),
+                const SizedBox(height: 8),
+                const CustomFormField(
+                    title: 'Password',
+                    hintText: 'Enter your password',
+                    obsecureText: false,
+                    isShowTitle: true),
+                const SizedBox(height: 8),
+                Align(
+                  alignment: Alignment.topRight,
+                  child: Text(
+                    'Forgot Password?',
+                    style: blueTextStyle,
+                  ),
                 ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Password',
-                      style: blackTextStyle.copyWith(
-                        fontWeight: medium,
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-                    TextFormField(
-                      obscureText: true,
-                      decoration: InputDecoration(
-                        border: OutlineInputBorder(
-                            borderRadius: BorderRadius.circular(14)),
-                        contentPadding: const EdgeInsets.all(15),
-                        hintText: 'Enter your password',
-                      ),
-                    ),
-                    const SizedBox(height: 8),
-                    Align(
-                      alignment: Alignment.topRight,
-                      child: Text(
-                        'Forgot Password?',
-                        style: blueTextStyle,
-                      ),
-                    ),
-                    const SizedBox(height: 30),
-                    CustomFilledButton(
-                      title: 'Sign In',
-                      onPressed: () {},
-                    )
-                  ],
+                const SizedBox(height: 30),
+                CustomFilledButton(
+                  width: double.infinity,
+                  title: 'Sign In',
+                  onPressed: () {
+                    Navigator.pushNamedAndRemoveUntil(
+                      context,
+                      '/home-page',
+                      (route) => false,
+                    );
+                  },
                 )
               ],
             ),
@@ -105,7 +83,12 @@ class SignInPage extends StatelessWidget {
           const SizedBox(height: 50),
           CustomTextButton(
             title: 'Create New Account',
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushNamed(
+                context,
+                '/signup',
+              );
+            },
           ),
         ],
       ),
