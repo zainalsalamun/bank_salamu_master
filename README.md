@@ -11,7 +11,7 @@
 <img src="assets/screenshots/signinpage.png" width="22%" />
 
 ### Screenshots
-<img src="assets/screenshots/signup.png" width="22%" /> <img src="assets/screenshots/home1.png" width="22%" /> <img src="assets/screenshots/home2" width="22%" />
+<img src="assets/screenshots/signup.png" width="22%" /> <img src="assets/screenshots/home1.png" width="22%" /> <img src="assets/screenshots/home2.png" width="22%" />
 ## :rocket: Technologies
 
 The following tools were used in this project:
