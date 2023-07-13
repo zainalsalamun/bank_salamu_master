@@ -82,7 +82,7 @@ class HomePage extends StatelessWidget {
             horizontal: 24,
           ),
           children: [
-            buildProfile(),
+            buildProfile(context),
             buildWalletCard(),
             buildLevel(),
             buildServices(),
@@ -93,7 +93,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget buildProfile() {
+  Widget buildProfile(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(
         top: 40,
@@ -120,29 +120,34 @@ class HomePage extends StatelessWidget {
               )
             ],
           ),
-          Container(
-            width: 60,
-            height: 60,
-            decoration: const BoxDecoration(
-              shape: BoxShape.circle,
-              image: DecorationImage(
-                image: AssetImage('assets/img_profile.png'),
-              ),
-            ),
-            child: Align(
-              alignment: Alignment.topRight,
-              child: Container(
-                width: 16,
-                height: 16,
-                decoration: BoxDecoration(
-                  shape: BoxShape.circle,
-                  color: whiteColor,
+          GestureDetector(
+            onTap: () {
+              Navigator.pushNamed(context, '/profile');
+            },
+            child: Container(
+              width: 60,
+              height: 60,
+              decoration: const BoxDecoration(
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                  image: AssetImage('assets/img_profile.png'),
                 ),
-                child: Center(
-                  child: Icon(
-                    Icons.check_circle,
-                    color: greenColor,
-                    size: 14,
+              ),
+              child: Align(
+                alignment: Alignment.topRight,
+                child: Container(
+                  width: 16,
+                  height: 16,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: whiteColor,
+                  ),
+                  child: Center(
+                    child: Icon(
+                      Icons.check_circle,
+                      color: greenColor,
+                      size: 14,
+                    ),
                   ),
                 ),
               ),
@@ -426,19 +431,19 @@ class HomePage extends StatelessWidget {
             HomeTipsItem(
                 imageUrl: 'assets/img_tips1.png',
                 title: 'Please image tips',
-                url: 'https//google.com'),
+                url: 'https://wakatime.com'),
             HomeTipsItem(
                 imageUrl: 'assets/img_tips2.png',
                 title: 'Please image tips',
-                url: 'https//google.com'),
+                url: 'https://wwww.google.com'),
             HomeTipsItem(
                 imageUrl: 'assets/img_tips3.png',
                 title: 'Please image tips',
-                url: 'https//google.com'),
+                url: 'https://www.google.com'),
             HomeTipsItem(
                 imageUrl: 'assets/img_tips4.png',
                 title: 'Please image tips',
-                url: 'https//google.com'),
+                url: 'https://wwww.google.com'),
           ])
         ],
       ),
