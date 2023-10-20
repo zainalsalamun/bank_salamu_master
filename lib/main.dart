@@ -1,6 +1,7 @@
 import 'package:bank_salamu_master/shared/theme.dart';
 import 'package:bank_salamu_master/ui/pages/home/home_page.dart';
 import 'package:bank_salamu_master/ui/pages/onboarding/onboarding_page.dart';
+import 'package:bank_salamu_master/ui/pages/profile/profile_edit_page.dart';
 import 'package:bank_salamu_master/ui/pages/signin/signin_page.dart';
 import 'package:bank_salamu_master/ui/pages/signup/sign_up_page.dart';
 import 'package:bank_salamu_master/ui/pages/signup/sign_up_set_ktp.dart';
@@ -45,6 +46,7 @@ class MyApp extends StatelessWidget {
         '/home-page': (context) => const HomePage(),
         '/profile': (context) => const ProfilePage(),
         '/pin-page': (context) => const PinPage(),
+        '/profile-edit': (context) => const ProfileEditPage(),
       },
     );
   }
