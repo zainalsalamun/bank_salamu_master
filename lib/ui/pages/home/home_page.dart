@@ -167,7 +167,7 @@ class HomePage extends StatelessWidget {
       padding: const EdgeInsets.all(30),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(28),
-        image: const DecorationImage(
+        image: const DecorationImage( 
           fit: BoxFit.cover,
           image: AssetImage(
             'assets/img_bg_card.png',
