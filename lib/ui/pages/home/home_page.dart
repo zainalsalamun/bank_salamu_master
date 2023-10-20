@@ -167,7 +167,7 @@ class HomePage extends StatelessWidget {
       padding: const EdgeInsets.all(30),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(28),
-        image: const DecorationImage( 
+        image: const DecorationImage(
           fit: BoxFit.cover,
           image: AssetImage(
             'assets/img_bg_card.png',
@@ -426,7 +426,7 @@ class HomePage extends StatelessWidget {
           const SizedBox(
             height: 14,
           ),
-          Wrap(spacing: 17, runSpacing: 17, children: const [
+          const Wrap(spacing: 17, runSpacing: 17, children: [
             HomeTipsItem(
                 imageUrl: 'assets/img_tips1.png',
                 title: 'Please image tips',
