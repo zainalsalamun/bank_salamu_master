@@ -3,8 +3,6 @@ import 'dart:async';
 import 'package:bank_salamu_master/shared/theme.dart';
 import 'package:flutter/material.dart';
 
-import '../onboarding/onboarding_page.dart';
-
 class SplashPage extends StatefulWidget {
   const SplashPage({super.key});
 

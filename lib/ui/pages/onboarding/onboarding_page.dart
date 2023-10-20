@@ -3,7 +3,6 @@ import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 
 import '../../widget/button.dart';
-import '../signin/signin_page.dart';
 
 class OnboardingPage extends StatefulWidget {
   const OnboardingPage({super.key});

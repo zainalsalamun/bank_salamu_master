@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 
 import '../../../shared/theme.dart';
 import '../../widget/button.dart';
-import '../../widget/forms.dart';
 
 class SignUpSetKtp extends StatelessWidget {
   const SignUpSetKtp({super.key});
