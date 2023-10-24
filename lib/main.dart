@@ -11,6 +11,8 @@ import 'package:bank_salamu_master/ui/pages/splash/splash_page.dart';
 import 'package:bank_salamu_master/ui/pages/topup/pin_page.dart';
 import 'package:flutter/material.dart';
 
+import 'ui/pages/profile/profile_edit_pin_page.dart';
+import 'ui/pages/profile/profile_edit_success.dart';
 import 'ui/pages/profile/profile_page.dart';
 
 void main() {
@@ -47,6 +49,8 @@ class MyApp extends StatelessWidget {
         '/profile': (context) => const ProfilePage(),
         '/pin-page': (context) => const PinPage(),
         '/profile-edit': (context) => const ProfileEditPage(),
+        '/profile-edit-pin': (context) => const ProfileEditPinPage(),
+        '/profile-edit-success': (context) => const ProfileEditSuccess(),
       },
     );
   }
