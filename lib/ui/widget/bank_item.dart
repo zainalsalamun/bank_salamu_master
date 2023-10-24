@@ -2,7 +2,15 @@ import 'package:bank_salamu_master/shared/theme.dart';
 import 'package:flutter/material.dart';
 
 class BankItem extends StatelessWidget {
-  const BankItem({super.key});
+  final String title;
+  final String imageUrl;
+  final bool isSelected;
+  const BankItem(
+      {Key? key,
+      required this.title,
+      required this.imageUrl,
+      this.isSelected = false})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -15,29 +23,30 @@ class BankItem extends StatelessWidget {
         borderRadius: BorderRadius.circular(20),
         color: whiteColor,
         border: Border.all(
-          color: lightBackgroundColor,
+          color: isSelected ? blueColor : whiteColor,
+          width: 2,
         ),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Image.network(
-            'assets/img_logo_light.png',
+          Image.asset(
+            imageUrl,
             height: 30,
           ),
           Column(
             crossAxisAlignment: CrossAxisAlignment.end,
             children: [
               Text(
-                'Bank',
+                title,
                 style: blackTextStyle.copyWith(
                   fontSize: 16,
-                  fontWeight: semiBold,
+                  fontWeight: medium,
                 ),
               ),
               const SizedBox(height: 2),
               Text(
-                'Salamu Master',
+                '50 mins',
                 style: greyTextStyle.copyWith(fontSize: 16),
               ),
             ],
