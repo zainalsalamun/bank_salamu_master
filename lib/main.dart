@@ -14,6 +14,7 @@ import 'package:flutter/material.dart';
 import 'ui/pages/profile/profile_edit_pin_page.dart';
 import 'ui/pages/profile/profile_edit_success.dart';
 import 'ui/pages/profile/profile_page.dart';
+import 'ui/pages/topup/topup_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -51,6 +52,7 @@ class MyApp extends StatelessWidget {
         '/profile-edit': (context) => const ProfileEditPage(),
         '/profile-edit-pin': (context) => const ProfileEditPinPage(),
         '/profile-edit-success': (context) => const ProfileEditSuccess(),
+        '/topup-page': (context) => const TopUpPage(),
       },
     );
   }
