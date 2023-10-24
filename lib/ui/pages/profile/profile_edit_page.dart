@@ -56,11 +56,12 @@ class ProfileEditPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 30),
                 CustomFilledButton(
-                  title: 'Update',
+                  title: 'Update Now',
                   onPressed: () {
-                    Navigator.pushNamed(
+                    Navigator.pushNamedAndRemoveUntil(
                       context,
-                      '/signup-set-profile',
+                      '/profile-edit-success',
+                      ((route) => false),
                     );
                   },
                 )
