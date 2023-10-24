@@ -84,7 +84,7 @@ class HomePage extends StatelessWidget {
             buildProfile(context),
             buildWalletCard(),
             buildLevel(),
-            buildServices(),
+            buildServices(context),
             buildLatestTransactions(),
             buildSendAgain(),
             buildFriendlyTips(),
@@ -261,7 +261,7 @@ class HomePage extends StatelessWidget {
     );
   }
 
-  Widget buildServices() {
+  Widget buildServices(BuildContext context) {
     return Container(
       margin: const EdgeInsets.only(
         top: 30,
@@ -283,7 +283,9 @@ class HomePage extends StatelessWidget {
               HomeServiceItem(
                   iconUrl: 'assets/ic_topup.png',
                   title: 'Top Up',
-                  onTap: () {}),
+                  onTap: () {
+                    Navigator.pushNamed(context, '/topup-page');
+                  }),
               HomeServiceItem(
                   iconUrl: 'assets/ic_send.png', title: 'Send ', onTap: () {}),
               HomeServiceItem(
@@ -323,9 +325,9 @@ class HomePage extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
               color: whiteColor,
             ),
-            child: Column(
+            child: const Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: const [
+              children: [
                 HomeLatTransactioItem(
                     iconUrl: 'assets/ic_transaction_cat1.png',
                     title: 'Top Up',
@@ -375,10 +377,10 @@ class HomePage extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 14),
-          SingleChildScrollView(
+          const SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
-              children: const [
+              children: [
                 HomeUserItem(
                   imageUrl: 'assets/img_friend1.png',
                   userName: 'Yuanita',
