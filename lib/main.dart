@@ -11,6 +11,8 @@ import 'package:bank_salamu_master/ui/pages/splash/splash_page.dart';
 import 'package:bank_salamu_master/ui/pages/topup/pin_page.dart';
 import 'package:flutter/material.dart';
 
+import 'ui/pages/homebackup/homcopy.dart';
+import 'ui/pages/homebackup/homecopycard.dart';
 import 'ui/pages/profile/profile_edit_pin_page.dart';
 import 'ui/pages/profile/profile_edit_success.dart';
 import 'ui/pages/profile/profile_page.dart';
@@ -55,6 +57,8 @@ class MyApp extends StatelessWidget {
         '/profile-edit-success': (context) => const ProfileEditSuccess(),
         '/topup-page': (context) => const TopUpPage(),
         '/topup-amount-page': (context) => const TopUpAmountPage(),
+        '/homecopy': (context) => const HomeCopyPage(),
+        '/homecopycard': (context) => const HomeCopyCardPage(),
       },
     );
   }

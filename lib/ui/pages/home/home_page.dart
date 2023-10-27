@@ -428,7 +428,7 @@ class HomePage extends StatelessWidget {
           const SizedBox(
             height: 14,
           ),
-          const Wrap(spacing: 17, runSpacing: 17, children: [
+          Wrap(spacing: 17, runSpacing: 17, children: [
             HomeTipsItem(
                 imageUrl: 'assets/img_tips1.png',
                 title: 'Please image tips',
