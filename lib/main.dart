@@ -16,6 +16,7 @@ import 'ui/pages/homebackup/homecopycard.dart';
 import 'ui/pages/profile/profile_edit_pin_page.dart';
 import 'ui/pages/profile/profile_edit_success.dart';
 import 'ui/pages/profile/profile_page.dart';
+import 'ui/pages/topup/top_up_success.dart';
 import 'ui/pages/topup/topu_amount_page.dart';
 import 'ui/pages/topup/topup_page.dart';
 
@@ -59,6 +60,7 @@ class MyApp extends StatelessWidget {
         '/topup-amount-page': (context) => const TopUpAmountPage(),
         '/homecopy': (context) => const HomeCopyPage(),
         '/homecopycard': (context) => const HomeCopyCardPage(),
+        '/topup-success': (context) => const TopUpSuccess(),
       },
     );
   }
