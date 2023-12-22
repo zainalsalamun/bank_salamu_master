@@ -1,5 +1,7 @@
 import 'package:bank_salamu_master/shared/theme.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../widget/button.dart';
 
@@ -13,7 +15,25 @@ class TopUpAmountPage extends StatefulWidget {
 class _TopUpAmountPage extends State<TopUpAmountPage> {
   final TextEditingController amountController = TextEditingController();
 
+  @override
+  void initState() {
+    super.initState();
+    amountController.addListener(() {
+      final text = amountController.text;
+      amountController.value = amountController.value.copyWith(
+        text: NumberFormat.currency(
+          locale: 'id',
+          symbol: '',
+          decimalDigits: 0,
+        ).format(int.parse(text.replaceAll('.', ''))),
+      );
+    });
+  }
+
   addAmount(String number) {
+    if (amountController.text == '0') {
+      amountController.text = '';
+    }
     setState(() {
       amountController.text = amountController.text + number;
     });
@@ -28,6 +48,9 @@ class _TopUpAmountPage extends State<TopUpAmountPage> {
       setState(() {
         amountController.text = amountController.text
             .substring(0, amountController.text.length - 1);
+        if (amountController.text == '') {
+          amountController.text = '0';
+        }
       });
     }
   }
@@ -42,7 +65,7 @@ class _TopUpAmountPage extends State<TopUpAmountPage> {
         ),
         children: [
           const SizedBox(
-            height: 46,
+            height: 60,
           ),
           Center(
             child: Text(
@@ -56,33 +79,35 @@ class _TopUpAmountPage extends State<TopUpAmountPage> {
           const SizedBox(
             height: 67,
           ),
-          SizedBox(
-            width: 200,
-            child: TextFormField(
-              controller: amountController,
-              enabled: false,
-              style: whiteTextStyle.copyWith(
-                fontSize: 36,
-                fontWeight: medium,
-              ),
-              decoration: InputDecoration(
-                prefixIcon: Text(
-                  'Rp ',
-                  style: whiteTextStyle.copyWith(
-                    fontSize: 36,
-                    fontWeight: medium,
-                  ),
+          Align(
+            child: SizedBox(
+              width: 200,
+              child: TextFormField(
+                controller: amountController,
+                enabled: false,
+                style: whiteTextStyle.copyWith(
+                  fontSize: 30,
+                  fontWeight: medium,
                 ),
-                disabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(
-                    color: greyColor,
+                decoration: InputDecoration(
+                  prefixIcon: Text(
+                    'Rp ',
+                    style: whiteTextStyle.copyWith(
+                      fontSize: 36,
+                      fontWeight: medium,
+                    ),
+                  ),
+                  disabledBorder: UnderlineInputBorder(
+                    borderSide: BorderSide(
+                      color: greyColor,
+                    ),
                   ),
                 ),
               ),
             ),
           ),
           const SizedBox(
-            height: 24,
+            height: 34,
           ),
           Wrap(
             spacing: 40,
@@ -165,7 +190,7 @@ class _TopUpAmountPage extends State<TopUpAmountPage> {
                   ),
                   child: Center(
                     child: Icon(
-                      Icons.arrow_back_ios,
+                      Icons.arrow_back,
                       color: whiteColor,
                     ),
                   ),
@@ -173,6 +198,29 @@ class _TopUpAmountPage extends State<TopUpAmountPage> {
               ),
             ],
           ),
+          const SizedBox(
+            height: 50,
+          ),
+          CustomFilledButton(
+              title: 'Checkout Now',
+              onPressed: () async {
+                if (await Navigator.pushNamed(context, '/pin-page') == true) {
+                  await launch('https://demo.midtrans.com/');
+                  Navigator.pushNamedAndRemoveUntil(
+                    context,
+                    '/topup-success',
+                    (route) => false,
+                  );
+                }
+              }),
+          const SizedBox(
+            height: 25,
+          ),
+          CustomTextButton(
+            title: 'Term & Conditions',
+            onPressed: () {},
+          ),
+          const SizedBox(height: 40)
         ],
       ),
     );
