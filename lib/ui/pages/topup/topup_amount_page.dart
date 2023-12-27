@@ -69,7 +69,7 @@ class _TopUpAmountPage extends State<TopUpAmountPage> {
           ),
           Center(
             child: Text(
-              'Total Aamount',
+              'Total Amount',
               style: whiteTextStyle.copyWith(
                 fontSize: 20,
                 fontWeight: semiBold,

@@ -41,7 +41,7 @@ class _PinPageState extends State<PinPage> {
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(
-            horizontal: 20,
+            horizontal: 48,
           ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
@@ -54,25 +54,27 @@ class _PinPageState extends State<PinPage> {
                 ),
               ),
               const SizedBox(
-                height: 72,
+                height: 67,
               ),
-              SizedBox(
-                width: 200,
-                child: TextFormField(
-                  controller: pinController,
-                  obscureText: true,
-                  cursorColor: greyColor,
-                  obscuringCharacter: '*',
-                  enabled: false,
-                  style: whiteTextStyle.copyWith(
-                    fontSize: 36,
-                    fontWeight: medium,
-                    letterSpacing: 16,
-                  ),
-                  decoration: InputDecoration(
-                    disabledBorder: UnderlineInputBorder(
-                      borderSide: BorderSide(
-                        color: greyColor,
+              Align(
+                child: SizedBox(
+                  width: 200,
+                  child: TextFormField(
+                    controller: pinController,
+                    obscureText: true,
+                    cursorColor: greyColor,
+                    obscuringCharacter: '*',
+                    enabled: false,
+                    style: whiteTextStyle.copyWith(
+                      fontSize: 36,
+                      fontWeight: medium,
+                      letterSpacing: 16,
+                    ),
+                    decoration: InputDecoration(
+                      disabledBorder: UnderlineInputBorder(
+                        borderSide: BorderSide(
+                          color: greyColor,
+                        ),
                       ),
                     ),
                   ),
