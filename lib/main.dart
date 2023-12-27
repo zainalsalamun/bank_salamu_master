@@ -9,6 +9,7 @@ import 'package:bank_salamu_master/ui/pages/signup/sign_up_set_profile.dart';
 import 'package:bank_salamu_master/ui/pages/signup/sign_up_success_page.dart';
 import 'package:bank_salamu_master/ui/pages/splash/splash_page.dart';
 import 'package:bank_salamu_master/ui/pages/topup/pin_page.dart';
+import 'package:bank_salamu_master/ui/pages/transfer/transfer_page.dart';
 import 'package:flutter/material.dart';
 
 import 'ui/pages/homebackup/homcopy.dart';
@@ -61,6 +62,7 @@ class MyApp extends StatelessWidget {
         '/homecopy': (context) => const HomeCopyPage(),
         '/homecopycard': (context) => const HomeCopyCardPage(),
         '/topup-success': (context) => const TopUpSuccess(),
+        '/transfer': (context) => const TransferPage(),
       },
     );
   }

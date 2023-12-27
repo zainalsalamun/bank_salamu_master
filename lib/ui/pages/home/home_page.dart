@@ -287,7 +287,11 @@ class HomePage extends StatelessWidget {
                     Navigator.pushNamed(context, '/topup-page');
                   }),
               HomeServiceItem(
-                  iconUrl: 'assets/ic_send.png', title: 'Send ', onTap: () {}),
+                  iconUrl: 'assets/ic_send.png',
+                  title: 'Send ',
+                  onTap: () {
+                    Navigator.pushNamed(context, '/transfer');
+                  }),
               HomeServiceItem(
                   iconUrl: 'assets/ic_withdraw.png',
                   title: 'Withdraw',
@@ -325,9 +329,9 @@ class HomePage extends StatelessWidget {
               borderRadius: BorderRadius.circular(20),
               color: whiteColor,
             ),
-            child: const Column(
+            child:  Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
+              children:  const [
                 HomeLatTransactioItem(
                     iconUrl: 'assets/ic_transaction_cat1.png',
                     title: 'Top Up',
@@ -377,10 +381,10 @@ class HomePage extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 14),
-          const SingleChildScrollView(
+           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
-              children: [
+              children:const  [
                 HomeUserItem(
                   imageUrl: 'assets/img_friend1.png',
                   userName: 'Yuanita',
@@ -428,7 +432,7 @@ class HomePage extends StatelessWidget {
           const SizedBox(
             height: 14,
           ),
-          Wrap(spacing: 17, runSpacing: 17, children: [
+          Wrap(spacing: 17, runSpacing: 17, children: const [
             HomeTipsItem(
                 imageUrl: 'assets/img_tips1.png',
                 title: 'Please image tips',

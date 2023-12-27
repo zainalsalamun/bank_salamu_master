@@ -10,13 +10,14 @@ class CustomFormField extends StatelessWidget {
   final String hintText;
 
   const CustomFormField(
-      {super.key,
+      {Key? key,
       required this.title,
-      required this.hintText,
-      required this.obsecureText,
+      this.obsecureText = false,
       this.controller,
-      required this.isShowTitle,
-      this.onFileSubmited});
+      this.isShowTitle = false,
+      this.onFileSubmited,
+      this.hintText = ''})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +37,7 @@ class CustomFormField extends StatelessWidget {
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(14),
           ),
-          hintText: hintText,
+          hintText: !isShowTitle ? title : null,
           contentPadding: const EdgeInsets.all(12),
         ),
         onFieldSubmitted: onFileSubmited,
